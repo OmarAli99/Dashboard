@@ -1,0 +1,1 @@
+<label for="{{ $fill }}">{{ __('keywords.' . $fill) }}</label>
