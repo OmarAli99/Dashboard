@@ -27,11 +27,11 @@ class StoreSettingRequest extends FormRequest
            'address' => 'required|string',
            'phone' => 'required|string|min:10|max:20',
            'email' => 'required|email|string',
-           'facebook' => 'required|url|string',
-           'twitter' => 'required|url|string',
-           'youtube' => 'required|url|string',
-           'linkedin' =>'required|url|string',
-           'instagram' => 'required|url|string',
+           'facebook' => 'nullable|url|string',
+           'twitter' => 'nullable|url|string',
+           'youtube' => 'nullable|url|string',
+           'linkedin' =>'nullable|url|string',
+           'instagram' => 'nullable|url|string',
             
         ];
     }

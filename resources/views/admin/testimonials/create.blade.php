@@ -45,14 +45,6 @@
                                   <x-message-error fill="image" />
 
                             </div>
-
-                            <div class="col-md-4 mb-3">
-                                <x-form-label fill="description"></x-form-label>
-
-                                <textarea name="description" class="form-control" placeholder="{{ __('keywords.description') }}">{{ old('description') }}</textarea>
-                                <x-message-error fill="description" />
-
-                            </div>
                         </div>
                         <x-submit-button></x-submit-button>
                        
