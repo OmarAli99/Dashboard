@@ -11,7 +11,8 @@ class {{ class }} extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+
+        return true;
     }
 
     /**
@@ -19,10 +20,26 @@ class {{ class }} extends FormRequest
      *
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
      */
-    public function rules(): array
+
+      public function rules(): array
+    {
+       return [
+        //    'title' => 'required|string',
+        //    'icon' => 'required|string',
+         //   'description' => 'required|string',
+
+            
+        ];
+    }
+
+    public function attributes()
     {
         return [
-            //
+          //  'title' => __('keywords.title'),
+          //  'icon' =>__('keywords.icon'),
+          //  'description' =>__('keywords.description'),
+
+            
         ];
     }
 }

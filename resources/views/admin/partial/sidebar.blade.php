@@ -25,12 +25,28 @@
           <p class="text-muted nav-heading mt-4 mb-1">
             <span>{{ __('keywords.components') }}</span>
           </p>
-            <li class="nav-item w-100">
-              <a class="nav-link" href="{{ route('admin.services.index') }}">
-                <i class="fe fe-24 fe-aperture"></i>
-                <span class="ml-3 item-text">{{ __('keywords.services') }}</span>
-              </a>
-            </li>
+
+   
+          <x-SidebarTab href="{{ route('admin.services.index') }}" 
+          icon="fe-aperture" name="{{ __('keywords.services') }}"></x-SidebarTab>
+
+          <x-SidebarTab href="{{ route('admin.features.index') }}" 
+          icon="fe-grid" name="{{ __('keywords.features') }}"></x-SidebarTab>
+
+          <x-SidebarTab href="{{ route('admin.messages.index') }}" 
+          icon="fe-message-circle" name="{{ __('keywords.messages') }}"></x-SidebarTab>
+
+          <x-SidebarTab href="{{ route('admin.subscribers.index') }}" 
+          icon="fe-mail" name="{{ __('keywords.subscribers') }}"></x-SidebarTab>
+
+          <x-SidebarTab href="{{ route('admin.testimonials.index') }}" 
+          icon="fe-layers" name="{{ __('keywords.testimonials') }}"></x-SidebarTab>
+
+          <x-SidebarTab href="{{ route('admin.members.index') }}" 
+          icon="fe-user" name="{{ __('keywords.members') }}"></x-SidebarTab>
+
+          <x-SidebarTab href="{{ route('admin.settings.index') }}" 
+          icon="fe-settings" name="{{ __('keywords.settings') }}"></x-SidebarTab>
 
           </ul>
 

@@ -25,7 +25,17 @@ return [
     'add_new_service'  => 'اضافة خدمة جديدة',
     'description'  => 'الوصف',
      'submit'  => 'أرسل',
-    'create_successfully'  => 'لقد تم إضافته بنجاحy',
+    'create_successfully'  => 'تم إضافة جديدة',
+   'updated_successfully'  => 'تم تعديل جديد',
+    'deleted_successfully'  => 'تم مسح صف بنجاح',
+    'show_service'  => 'عرض الخدمات',
+    'edit_service'  => 'تعديل الخمات',
+    // features
+    'features'  => 'خصائص',
+    'show_feature'  => 'عرض الخصائص',
+    'edit_feature'  => 'تعديل الخصائص',
+    'add_new_feature'  => 'إضافة الخصائص',
+
 
 
 

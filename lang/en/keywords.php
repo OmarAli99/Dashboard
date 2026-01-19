@@ -28,6 +28,40 @@ return [
     'deleted_successfully'  => 'Good Deleted_Successfully',
     'show_service'  => 'Show_Service',
     'edit_service'  => 'Edit_Service',
+    // features
+    'features'  => 'Features',
+    'show_feature'  => 'Show_feature',
+    'edit_feature'  => 'Edit_feature',
+    'add_new_feature'  => 'Add_New_Feature',
+    'messages'  => 'Messages',
+
+    //message
+    'name'  => 'Name',
+    'email'  => 'Email',
+    'subject'  => 'Subject',
+    'message'  => 'Message',
+    'show_message'  => 'Show_Message',
+    'subscribers'  => 'Subscribers',
+    'testimonials'  => 'Testimonials',
+    'position'  => 'Position',
+    'image'  => 'Image',
+    'add_new_testimonial'  => 'Add_New_Testimonial',
+    'current_image'  => 'Current_Image',
+    'members'  => 'Members',
+    'facebook'  => 'Facebook',
+    'twitter'  => 'Twitter',
+    'linkedin'  => 'Linkedin',
+    'add_new_member'  => 'Add_New_Member',
+    'show_member'  => 'Show_Member',
+    'edit_member'  => 'Edit_Member',
+    'address'  => 'Address',
+    'youtube'  => 'Youtube',
+    'instagram'  => 'Instagram',
+    'settings'  => 'Settings',
+    'phone'  => 'Phone',
+    'add_new_setting'  => 'Add_New_Setting',
+    'show_setting'  => 'Show_Setting',
+
 
 
 

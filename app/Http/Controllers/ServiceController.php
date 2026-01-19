@@ -13,9 +13,9 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        $services = Service::paginate(10);
+        $services = Service::paginate(config('pagination.count'));
         return view('admin.services.index', get_defined_vars());
-    }
+    } 
 
     /**
      * Show the form for creating a new resource.
@@ -24,9 +24,9 @@ class ServiceController extends Controller
     {
 
         return view('admin.services.create', get_defined_vars());
-
-
+ 
     }
+ 
 
     /**
      * Store a newly created resource in storage.

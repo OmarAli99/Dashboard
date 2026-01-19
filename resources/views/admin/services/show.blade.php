@@ -21,13 +21,11 @@
                     <div class="col-md-6">
                       
                     <label for="icon">{{ __('keywords.icon') }}</label>
-                    <div class ="mt-2">
-                    <i class = "{{ $service->icon }} fa-2x"></i>
-                    </div>
+                    <p class="form-control">{{ $service->icon }}</p>             
                     </div>
                     <div class="col-md-12 mt-2">
                     
-                        <label for="description">{{ __('keywords.description') }}</label>
+                    <label for="description">{{ __('keywords.description') }}</label>
                     <p class="form-control">{{ $service->description }}</p>             
 
                        
