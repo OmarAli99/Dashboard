@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\FeatureController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\MemberController;
@@ -8,6 +9,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\SubscriberController;
+use App\Http\Controllers\SubstoreController;
 use App\Http\Controllers\TestimonialController;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
@@ -27,6 +29,9 @@ Route::get('/contact','contact')->name('contact');
 
 
 });
+
+Route::post('storesub',[SubscriberController::class,'store'])->name('substore');
+Route::post('storemge',[MessageController::class,'store'])->name('storemge');
 
 // admin routed
 Route::group([
@@ -65,6 +70,9 @@ Route::group([
         Route::resource('members', MemberController::class);
         }); 
 
+        Route::controller(CompanyController::class)->group(function(){
+        Route::resource('companys', CompanyController::class);
+        }); 
          Route::controller(SettingController::class)->group(function(){
         Route::resource('settings', SettingController::class);
         }); 

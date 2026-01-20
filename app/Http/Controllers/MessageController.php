@@ -40,4 +40,12 @@ class MessageController extends Controller
          return to_route('admin.messages.index')->with('success' ,__('keywords.deleted_successfully') );
 
     }
+
+    public function store(StoreMessageRequest $request)
+    {
+       $data = $request->validated();
+       Message::create($data);
+       return to_route('front.contact')->with('success' , __('inserted_successfully') );
+
+    }
 }

@@ -1,3 +1,8 @@
+@php
+    use App\Models\Company;
+    $companys = Company::all();
+@endphp
+
 @extends('front.master')
 @section('title','Index')
 @section('home-active','active')
@@ -66,8 +71,13 @@
                         <h3 class="text-white">Ready to get started</h3>
                         <small class="text-white">Diam elitr est dolore at sanctus nonumy.</small>
                         <div class="position-relative w-100 mt-3">
-                            <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text" placeholder="Enter Your Email" style="height: 48px;">
-                            <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i class="fa fa-paper-plane text-primary fs-4"></i></button>
+                            <form method="POST" action="{{ route('substore') }}">
+                                @csrf
+                            <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text" name='email'
+                             placeholder="Enter Your Email" style="height: 48px;">
+                            </form>
+                            <button type="submit" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i 
+                                class="fa fa-paper-plane text-primary fs-4"></i></button>
                         </div>
                     </div>
                     <div class="col-md-6 text-center mb-n5 d-none d-md-block">
@@ -91,137 +101,19 @@
         <div class="container-xxl bg-primary my-6 py-5 wow fadeInUp" data-wow-delay="0.1s">
             <div class="container">
                 <div class="owl-carousel client-carousel">
-                    <a href="#"><img class="img-fluid" src="{{asset('assets-front')}}/img/logo-1.png" alt=""></a>
-                    <a href="#"><img class="img-fluid" src="{{asset('assets-front')}}/img/logo-2.png" alt=""></a>
-                    <a href="#"><img class="img-fluid" src="{{asset('assets-front')}}/img/logo-3.png" alt=""></a>
-                    <a href="#"><img class="img-fluid" src="{{asset('assets-front')}}/img/logo-4.png" alt=""></a>
-                    <a href="#"><img class="img-fluid" src="{{asset('assets-front')}}/img/logo-5.png" alt=""></a>
-                    <a href="#"><img class="img-fluid" src="{{asset('assets-front')}}/img/logo-6.png" alt=""></a>
-                    <a href="#"><img class="img-fluid" src="{{asset('assets-front')}}/img/logo-7.png" alt=""></a>
-                    <a href="#"><img class="img-fluid" src="{{asset('assets-front')}}/img/logo-8.png" alt=""></a>
+                    @if(count($companys) > 0)
+                    @foreach ( $companys as $company )
+                    <a href="#"><img class="img-fluid" src="{{asset('storage/' .$company->image)}}" alt=""></a>
+                    @endforeach
+                    @endif
                 </div>
             </div>
         </div>
         <!-- Client End -->
 
 
-        <!-- Testimonial Start -->
-        {{-- <div class="container-xxl py-6">
-            <div class="container">
-                <div class="mx-auto text-center wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                    <div class="d-inline-block border rounded-pill text-primary px-4 mb-3">Testimonial</div>
-                    <h2 class="mb-5">What Our Clients Say!</h2>
-                </div>
-                <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="testimonial-item rounded p-4">
-                        <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
-                        <p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</p>
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="{{asset('assets-front')}}/img/testimonial-1.jpg">
-                            <div class="ps-3">
-                                <h6 class="mb-1">Client Name</h6>
-                                <small>Profession</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-item rounded p-4">
-                        <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
-                        <p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</p>
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="{{asset('assets-front')}}/img/testimonial-2.jpg">
-                            <div class="ps-3">
-                                <h6 class="mb-1">Client Name</h6>
-                                <small>Profession</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-item rounded p-4">
-                        <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
-                        <p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</p>
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="{{asset('assets-front')}}/img/testimonial-3.jpg">
-                            <div class="ps-3">
-                                <h6 class="mb-1">Client Name</h6>
-                                <small>Profession</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-item rounded p-4">
-                        <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
-                        <p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</p>
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="{{asset('assets-front')}}/img/testimonial-4.jpg">
-                            <div class="ps-3">
-                                <h6 class="mb-1">Client Name</h6>
-                                <small>Profession</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> --}}
-        <!-- Testimonial End -->
 <x-front-testimonal-component></x-front-testimonal-component>
 
-        <!-- Team Start -->
-        <div class="container-xxl py-6">
-            <div class="container">
-                <div class="mx-auto text-center wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                    <div class="d-inline-block border rounded-pill text-primary px-4 mb-3">Our Team</div>
-                    <h2 class="mb-5">Meet Our Team Members</h2>
-                </div>
-                <div class="row g-4">
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="team-item">
-                            <h5>Full Name</h5>
-                            <p class="mb-4">Designation</p>
-                            <img class="img-fluid rounded-circle w-100 mb-4" src="{{asset('assets-front')}}/img/team-1.jpg" alt="">
-                            <div class="d-flex justify-content-center">
-                                <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="team-item">
-                            <h5>Full Name</h5>
-                            <p class="mb-4">Designation</p>
-                            <img class="img-fluid rounded-circle w-100 mb-4" src="{{asset('assets-front')}}/img/team-2.jpg" alt="">
-                            <div class="d-flex justify-content-center">
-                                <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="team-item">
-                            <h5>Full Name</h5>
-                            <p class="mb-4">Designation</p>
-                            <img class="img-fluid rounded-circle w-100 mb-4" src="{{asset('assets-front')}}/img/team-3.jpg" alt="">
-                            <div class="d-flex justify-content-center">
-                                <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                        <div class="team-item">
-                            <h5>Full Name</h5>
-                            <p class="mb-4">Designation</p>
-                            <img class="img-fluid rounded-circle w-100 mb-4" src="{{asset('assets-front')}}/img/team-4.jpg" alt="">
-                            <div class="d-flex justify-content-center">
-                                <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Team End -->
-        
+
+<x-front-member-component></x-front-member-component>
 @endsection

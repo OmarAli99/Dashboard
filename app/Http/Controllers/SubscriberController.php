@@ -32,4 +32,12 @@ class SubscriberController extends Controller
          return to_route('admin.subscribers.index')->with('success' ,__('keywords.deleted_successfully') );
 
     }
+    
+    public function store(StoreSubscriberRequest $request)
+    {
+       $data = $request->validated();
+       Subscriber::create($data);
+      return to_route('front.index');
+
+    }
 }

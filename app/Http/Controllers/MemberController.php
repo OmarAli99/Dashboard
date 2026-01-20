@@ -79,7 +79,7 @@ class MemberController extends Controller
         }
 
         // 2. رفع الصورة الجديدة
-        $data['image'] = $request->file('image')->store('members', 'public');
+        $data['image'] = $request->file('image')->store('member', 'public');
     }
         $member->update($data);
         return to_route('admin.members.index')->with('success' ,__('keywords.updated_successfully') );

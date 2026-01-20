@@ -21,7 +21,7 @@ class SettingServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-     $settings = Setting::find(1);
+     $settings = Setting::first();
      view::share('setting' , $settings);
     }
 }

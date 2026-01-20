@@ -45,6 +45,9 @@
           <x-SidebarTab href="{{ route('admin.members.index') }}" 
           icon="fe-user" name="{{ __('keywords.members') }}"></x-SidebarTab>
 
+          <x-SidebarTab href="{{ route('admin.companys.index') }}" 
+          icon="fe-pocket" name="{{ __('keywords.company') }}"></x-SidebarTab>
+
           <x-SidebarTab href="{{ route('admin.settings.index') }}" 
           icon="fe-settings" name="{{ __('keywords.settings') }}"></x-SidebarTab>
 

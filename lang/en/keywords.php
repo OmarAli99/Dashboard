@@ -61,10 +61,10 @@ return [
     'phone'  => 'Phone',
     'add_new_setting'  => 'Add_New_Setting',
     'show_setting'  => 'Show_Setting',
-
-
-
-
+    'company'  => 'Company',
+    'companys'  => 'Companys',
+    'add_new_company'  => 'Add_New_Company',
+    'inserted_success'  => 'Inserted_Success',
 
 
 ];
